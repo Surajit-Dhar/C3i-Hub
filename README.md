@@ -56,7 +56,7 @@ Server - Heroku
 Clone the project
 
 ```bash
-  git clone https://github.com/Aaditya1978/E-Learning-Platform
+  git clone https://github.com/Surajit-Dhar/C3i-Hub
 ```
 
 Go to the project directory
@@ -76,7 +76,7 @@ Install dependencies
 Start the server
 
 ```bash
-  npm run dev
+  npm start
 ```
 
 To Run Client
@@ -95,37 +95,5 @@ Start the client
 
 ## Authors
 
-- [@Aaditya1978](https://github.com/Aaditya1978)
-- [@aastha2501](https://github.com/aastha2501)
-- [@amandeep-singh-12](https://github.com/amandeep-singh-12)
+- Surajit (https://github.com/Surajit-Dhar)
 
-
-## Features
-
-- Live tracking of tracks and videos
-- Supports Code Editor
-- Tracking of various competitions and hackathons
-- Admin Page for adding and updating courses
-
-
-## Contributing
-
-Contributions are always welcome!
-
-
-## Screenshots
-
-### Home Page
-![App Screenshot](https://res.cloudinary.com/dsi3u8pfq/image/upload/v1656824218/WhatsApp_Image_2022-07-03_at_10.26.16_AM_twnjpf.jpg)
-
-### User Page
-![App ScreenShot](https://res.cloudinary.com/dsi3u8pfq/image/upload/v1656824329/WhatsApp_Image_2022-07-03_at_10.28.28_AM_ztkkng.jpg)
-
-### Code Editor Page
-![App ScreenShot](https://res.cloudinary.com/dsi3u8pfq/image/upload/v1656824431/WhatsApp_Image_2022-07-03_at_10.30.12_AM_zt5a6y.jpg)
-
-### Content Page
-![App ScreenShot](https://res.cloudinary.com/dsi3u8pfq/image/upload/v1656824518/WhatsApp_Image_2022-07-03_at_10.31.40_AM_p28dgp.jpg)
-
-### Admin Page
-![App ScreenShot](https://res.cloudinary.com/dsi3u8pfq/image/upload/v1656824585/Screenshot_2022-07-03_103249_luvisd.png)
