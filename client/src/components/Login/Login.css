@@ -35,22 +35,22 @@
 
 .navbar-links span:hover{
     cursor: pointer;
-    color: #13bd5d;
+    color: #1360bd;
 }
 
 .navbar-links a:hover{
-    color: #178d4a;
+    color: #174c8d;
     text-decoration: none;
 }
 
 .navbar-links .active{
-    color: #178d4a;
+    color: #174e8d;
     text-decoration: none;
 }
 
 .buttons button{
     color: #fff;
-    background-color: #13bd5d;
+    background-color: #1368bd;
     border: 2px solid #4139aa;
     border-radius: 15px;
     width: 120px;
@@ -71,7 +71,7 @@
 
 .login-container{
     padding-top: 20vh;
-    background-color:#d5f7d5;
+    background-color:#d5edf7;
     padding-bottom: 10vh;
 }
 
@@ -96,7 +96,7 @@
     width: 15rem;
     height: 5rem;
     color: #000;
-    background-color: #d5f7d5;
+    background-color: #d5ecf7;
     text-align: center;
     text-decoration: none;
     font-weight: 600;
@@ -107,7 +107,7 @@
     border: none;
     width: 15rem;
     height: 5rem;
-    color: #13bd5d;
+    color: #1368bd;
     background-color: #fff;
     text-align: center;
     text-decoration: none;
@@ -127,7 +127,7 @@
 @media only screen and (max-width: 600px) {
     .login-container{
         padding-top: 20vh;
-        background-color:#d5f7d5;
+        background-color:#d5e7f7;
         padding-bottom: 10vh;
         margin-top: 10vh;
     }
@@ -140,37 +140,10 @@
 @media only screen and (min-width: 600px) {
     .login-container{
         padding-top: 20vh;
-        background-color:#d5f7d5;
+        background-color:#d5e1f7;
         padding-bottom: 10vh;
         margin-top: 10vh;
     }
-    .login-container .card-top .card-icon{
-        left: 13rem;
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    .login-container{
-        padding-top: 20vh;
-        background-color:#d5f7d5;
-        padding-bottom: 10vh;
-        margin-top: 10vh;
-    }
-    .login-container .card-top .card-icon{
-        left: 12,4rem;
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .login-container .card-top .card-icon{
-        left: 13rem;
-    }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
     .login-container .card-top .card-icon{
         left: 13rem;
     }
@@ -203,7 +176,7 @@
     border: none;
     color: #fff;
     border-radius: 15px;
-    background-color: #13bd5d;
+    background-color: #1357bd;
     text-align: center;
     text-decoration: none;
     font-weight: 600;

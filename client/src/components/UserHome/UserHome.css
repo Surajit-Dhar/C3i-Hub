@@ -6,7 +6,7 @@
 }
 
 .user-home .sub-head{
-    color: #0f994b;
+    color: #0f4b99;
     font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
 }
@@ -37,14 +37,14 @@
     right: -1rem;
     top: -1.5rem;
     font-size: 5.5rem;
-    border: 1px solid #0f994b;
-    background-color: #13c560;
+    border: 1px solid #0f4f99;
+    background-color: #1360c5;
     border-radius: 50%;
     padding: 0.7rem;
 }
 
 .user-home .user-home-cards .card .card-title{
-    color: #0f994b;
+    color: #0f6299;
     font-family: 'Roboto Slab', serif;
     font-size: 1.6rem;
 }
@@ -56,7 +56,7 @@
 }
 
 .user-home .user-home-cards .card button{
-    background-color: #0f994b;
+    background-color: #0f5b99;
     width: 7rem;
     border-radius: 7px;
     font-family: 'Roboto Slab', serif;

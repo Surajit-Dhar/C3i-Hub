@@ -39,11 +39,14 @@ export default function Login() {
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     event.preventDefault();
+    navigate("/home");
     if (form.checkValidity() === false) {
-      event.stopPropagation();
+      //event.stopPropagation();
+      navigate("/home")
     }
     else{
-      fetch(`${process.env.REACT_APP_BASE_URL}/api/user/login`, {
+      navigate("/home");
+      fetch(`http://localhost:5000/api/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +73,10 @@ export default function Login() {
       });
     }
     setValidated(true);
+    
   };
+
+  var sour = "https://cdn-icons-png.flaticon.com/128/4205/4205106.png";
 
   return (
     <div>
@@ -78,12 +84,12 @@ export default function Login() {
         <PreLoader />
       ) : (
         <div>
-          <PageProgress color={"#178d4a"} height={4} />
+          <PageProgress color={"#17548d"} height={4} />
 
           <div className="navbar">
             <div className="navbar-head">
               <a href="/" className="navbar-logo">
-                <img className="nav-logo" src={logo} alt="logo" />
+                <img className="nav-logo" src={sour} alt="logo" style={{height:"70px", width:"93px"}} />
               </a>
               <div className="navbar-links">
                 <span onClick={handleClick}>Home</span>
@@ -103,7 +109,6 @@ export default function Login() {
                 <Col>
                   <div className="card-top">
                     <div className="card-icon">
-                      <img src={icon} alt="icon" />
                     </div>
                     <Button className="register-button" onClick={handleSignupClick}>SIGNUP</Button>
                     <Button className="login-button">SIGNIN</Button>

@@ -51,6 +51,7 @@ export default function Register() {
         setError(false);
       }, 3000);
     } else {
+      navigate("/home");
       const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/user/register`, {
         method: "POST",
         headers: {
@@ -83,6 +84,7 @@ export default function Register() {
 
     setValidated(true);
   };
+  var sour = "https://cdn-icons-png.flaticon.com/128/4205/4205106.png";
 
   return (
     <div>
@@ -90,12 +92,12 @@ export default function Register() {
         <PreLoader />
       ) : (
         <div>
-          <PageProgress color={"#178d4a"} height={4} />
+          <PageProgress color={"#17568d"} height={4} />
 
           <div className="navbar">
             <div className="navbar-head">
               <a href="/" className="navbar-logo">
-                <img className="nav-logo" src={logo} alt="logo" />
+                <img className="nav-logo" src={sour} alt="logo" style={{height:"70px", width:"93px"}}/>
               </a>
               <div className="navbar-links">
                 <span onClick={handleClick}>Home</span>
@@ -115,7 +117,7 @@ export default function Register() {
                 <Col>
                   <div className="card-top">
                     <div className="card-icon">
-                      <img src={icon} alt="icon" />
+                      {/* <img src={icon} alt="icon" /> */}
                     </div>
                     <Button className="register-button">SIGNUP</Button>
                     <Button className="login-button" onClick={handleLoginClick}>

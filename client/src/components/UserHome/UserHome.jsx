@@ -25,7 +25,7 @@ export default function UserHome() {
 
   useEffect(() => {
     if (!localStorage.getItem("token")) {
-      navigate("/login");
+      navigate("/home");
     } else {
       fetch(`${process.env.REACT_APP_BASE_URL}/api/user/verifyToken`, {
         method: "POST",
