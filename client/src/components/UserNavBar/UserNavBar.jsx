@@ -56,17 +56,19 @@ export default function UserNavBar() {
     navigate("/");
   };
 
+  var sour = "https://cdn-icons-png.flaticon.com/128/4205/4205106.png";
+
   return (
     <Navbar collapseOnSelect expand="lg" className="usernav">
       <Container>
         <Navbar.Brand>
-          <img className="nav-logo" src={logo} alt="logo" />
+          <img className="nav-logo" src={sour} alt="logo" style={{height:"70px", width:"93px"}} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavLink to="/home" className={({ isActive }) => isActive ? "active links" : "links"}>
+            <NavLink to="/home_data" className={({ isActive }) => isActive ? "active links" : "links"}>
               Dashboard
             </NavLink>
             <NavLink to="/discuss" className={({ isActive }) => isActive ? "active links" : "links"}>

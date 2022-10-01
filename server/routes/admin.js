@@ -38,15 +38,15 @@ const upload = multer({storage: storage});
 //     next();
 //   });
 
-// router.get("/" , async (req, res) => {
-//     try{
-//       const admin = await Admin.find().lean().exec();
-//       return res.status(200).send({ admin: admin });
+router.get("/" , async (req, res) => {
+    try{
+      const admin = await Admin.find().lean().exec();
+      return res.status(200).send({ admin: admin });
 
-//     }catch(err){
-//       return res.status(404).send({message:err.message});
-//     }
-// })
+    }catch(err){
+      return res.status(404).send({message:err.message});
+    }
+})
 
 router.post("/register", async (req, res) => {
     const { name, email, password } = req.body;

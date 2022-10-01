@@ -12,7 +12,7 @@ import "./Login.css";
 export default function Login() {
   const navigate = useNavigate();
 
-  const [validated, setValidated] = useState(false);
+  const [validated, setValidated] = useState(true);
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +23,7 @@ export default function Login() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1100);
+    }, 1000);
   }, []);
 
   const handleClick = (e) => {
@@ -37,43 +37,9 @@ export default function Login() {
 };
 
   const handleSubmit = (event) => {
-    const form = event.currentTarget;
+    //const form = event.currentTarget;
     event.preventDefault();
-    navigate("/home");
-    if (form.checkValidity() === false) {
-      //event.stopPropagation();
-      navigate("/home")
-    }
-    else{
-      navigate("/home");
-      fetch(`http://localhost:5000/api/user/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.error) {
-          setError(true);
-          setErrorMessage(data.error);
-          setEmail("");
-          setPassword("");
-          setTimeout(() => {
-            setError(false);
-          }, 3000);
-        } else {
-          localStorage.setItem("token", data.token);
-          navigate("/home");
-        }
-      });
-    }
-    setValidated(true);
-    
+    navigate("/home_data");
   };
 
   var sour = "https://cdn-icons-png.flaticon.com/128/4205/4205106.png";
@@ -118,8 +84,8 @@ export default function Login() {
                     <Card.Body>
                       <Form
                         className="login-form"
-                        noValidate
-                        validated={validated}
+                        // noValidate
+                        // validated={validated}
                         onSubmit={handleSubmit}
                       >
 

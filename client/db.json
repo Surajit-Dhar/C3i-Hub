@@ -1,0 +1,58 @@
+{
+  "countries": [
+    {
+      "id": 1,
+      "name": "India"
+    },
+    {
+      "id": 2,
+      "name": "Bangladesh"
+    },
+    {
+      "id": 3,
+      "name": "Germany"
+    },
+    {
+      "id": 4,
+      "name": "Japan"
+    }
+  ],
+  "cities": [
+    {
+      "id": 1,
+      "city": "Tarun Chandra",
+      "country": "45700",
+      "population": "SQL, Java"
+    },
+    {
+      "id": 2,
+      "city": "Pablu Kumar",
+      "country": "89100",
+      "population": "Js, React"
+    },
+    {
+      "id": 4,
+      "city": "Ankita Das",
+      "country": "94500",
+      "population": "Angular"
+    },
+    {
+      "id": 5,
+      "city": "Arijit Kumar Dhar",
+      "country": "61882",
+      "population": "Node Js"
+    },
+    {
+      "id": "10",
+      "country": "29005",
+      "city": "John Thomas",
+      "population": "Full Stack"
+    },
+    {
+      "id": "3",
+      "country": "49980",
+      "city": "Jhon heavy",
+      "population": "Python, Java"
+    }
+  ]
+}

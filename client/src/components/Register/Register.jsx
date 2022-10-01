@@ -8,6 +8,7 @@ import logo from "../../images/logo.png";
 import icon from "../../images/icon.png";
 import authImage from "../../images/auth-image.png";
 import "./Register.css";
+import UserHome from "../UserHome/UserHome";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ export default function Register() {
 
   const handleSubmit = async (event) => {
     const form = event.currentTarget;
+    //navigate("/home_data"),
     event.preventDefault();
     if (form.checkValidity() === false) {
       event.stopPropagation();
@@ -51,8 +53,8 @@ export default function Register() {
         setError(false);
       }, 3000);
     } else {
-      navigate("/home");
-      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/user/register`, {
+      
+      const response = await fetch(`http://localhost:3000/api/user/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,12 +64,13 @@ export default function Register() {
           email,
           password,
         }),
+        
       });
-
+      
       const data = await response.json();
-      if(response.status === 201) {
+      if(data) {
         localStorage.setItem("token", data.token);
-        navigate("/home");
+        navigate("/home_data");
       }
       else{
         setError(true);
@@ -81,7 +84,7 @@ export default function Register() {
         }, 3000);
       }
     }
-
+   
     setValidated(true);
   };
   var sour = "https://cdn-icons-png.flaticon.com/128/4205/4205106.png";

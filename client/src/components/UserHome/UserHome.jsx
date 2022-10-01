@@ -19,69 +19,13 @@ export default function UserHome() {
 
   const [name, setName] = useState("");
   const [lineData, setLineData] = useState([
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+    0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 5,
   ]);
   const [pieData, setPieData] = useState([0, 0, 0]);
 
   useEffect(() => {
-    if (!localStorage.getItem("token")) {
-      navigate("/home");
-    } else {
-      fetch(`${process.env.REACT_APP_BASE_URL}/api/user/verifyToken`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          token: localStorage.getItem("token"),
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (!data.user) {
-            localStorage.removeItem("token");
-            navigate("/");
-          } else {
-            setName(data.user.name);
-          }
-        });
-    }
-    fetch(`${process.env.REACT_APP_BASE_URL}/api/user/getUserData`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        token: localStorage.getItem("token"),
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        let completed = 0;
-        let total = 0;
-        let left = 0;
-        data.courses.forEach((course) => {
-          total += course.videos.length;
-        });
-        data.userCourses.map((course) => {
-          completed += course.progress;
-          if (course.completed === true) {
-            const month = new Date(course.date_completed).getMonth();
-            setLineData((prevState) => {
-              const newArray = [...prevState];
-              newArray[month] += 1;
-              return newArray;
-            });
-          }
-        });
-        left = total - completed;
-        setPieData([completed, total, left]);
-      });
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2500);
-  }, [navigate]);
+   navigate("/home_data")
+  }, []);
 
   const handleClick = (e) => {
     e.preventDefault();

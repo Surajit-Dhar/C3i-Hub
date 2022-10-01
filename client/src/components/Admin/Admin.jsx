@@ -6,67 +6,21 @@ import "./Admin.css";
 export default function Admin() {
   const navigate = useNavigate();
 
-  const [validated, setValidated] = useState(false);
+  const [validated, setValidated] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    if (localStorage.getItem("adminToken")) {
-      fetch(`${process.env.REACT_APP_BASE_URL}/api/admin/verifyToken`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          adminToken: localStorage.getItem("adminToken"),
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.admin) {
-            navigate("/admin_home");
-          } else {
-            localStorage.removeItem("adminToken");
-          }
-        });
-    }
+    if (!localStorage.getItem("adminToken")) {
+      navigate("/admin_login");
+      }
+  
   }, [navigate]);
 
   const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    event.preventDefault();
-    if (form.checkValidity() === false) {
-      event.stopPropagation();
-    } else {
-      fetch(`${process.env.REACT_APP_BASE_URL}/api/admin/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.error) {
-            setError(true);
-            setErrorMessage(data.error);
-            setEmail("");
-            setPassword("");
-            setTimeout(() => {
-              setError(false);
-            }, 3000);
-          } else {
-            localStorage.setItem("adminToken", data.adminToken);
-            navigate("/admin_home");
-          }
-        });
-    }
-    setValidated(true);
+   navigate("/admin_home")
   };
 
   return (
@@ -87,6 +41,7 @@ export default function Admin() {
                 noValidate
                 validated={validated}
                 onSubmit={handleSubmit}
+                
               >
                 <Form.Group className="mb-3" controlId="formEmail">
                   <Form.Label>Email address</Form.Label>
@@ -96,6 +51,7 @@ export default function Admin() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    autoComplete="off"
                   />
                   <Form.Control.Feedback type="invalid">
                     Please enter valid email.
@@ -110,6 +66,7 @@ export default function Admin() {
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    autoComplete="off"
                   />
                   <Form.Control.Feedback type="invalid">
                     Please enter Password.
